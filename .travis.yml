@@ -41,6 +41,7 @@ addons:
 script: 
   - scripts/build.sh
   - scripts/test.sh
+  - make -f Makefile.debian
 
 matrix:
 # Ignore failures with OSX as the build forces to be build for OSX 10.6 and
