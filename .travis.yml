@@ -4,6 +4,8 @@ os:
 # disable osx for the moment
 #  - osx
 
+sudo: required
+
 addons:
   apt:
     packages:
@@ -41,7 +43,7 @@ addons:
 script: 
   - scripts/build.sh
   - scripts/test.sh
-  - make -f Makefile.debian
+  - scripts/debian.sh
 
 matrix:
 # Ignore failures with OSX as the build forces to be build for OSX 10.6 and
@@ -49,3 +51,9 @@ matrix:
 # could be easily fixed with a different CMakeLists.txt
 #  allow_failures:
 #    - os: osx
+
+
+env:
+  global:
+  - secure: "LS+0CRCUrPTUmd6SDJ72//e6j6xlRbcsSwIzmdiB3skxmu0uRqqpMjMB3OAEUgSJCdeES4xijixaXFyWe9belE3W6rYEOSNpMaL5g8FywnpxMQNZgE44bdJB3D2UBDHZkgoU2c8TGfN09z6tWxWr/dILSuXHsuRnl2BqX/PTb0SIcSmcy/ExWmEtCl9FuATlujvpC4LMlf0TKA0ps6Z9q9OndC7kavsFI+OG+6qGXsz3VrBpe2fJ8OQ0SNJw/oaYO4ryC805dNP72sy99QvfozSOtWLkeQ6P/JurZv6XcYygi4A80MVZeCq6oNNsaSLNzuo61eijPu/MrhbWU5JGZFbX6JTpMSYofWKUaf87AkMmYtB+ni6XfWePvQjjd7T3qXdC7PHM92uaoiQgGYh6SQvvBR8vy5shvIhVAiwgW2TVoqH2R9YQx0Z1vFFzOzYBaULuJWO9lJbxeC8dF+eKUerrj5AEXfGEJJPcQxiboY2ne9Atv8aaya8U73AEXmWVkVYOCCrELI0BEiE2jdgupSvo0Vuyma6dLX4KiDsNR8t3pOKN/u49UrCpBK3AhNIyct4S+xdNGfLH3APQaba9N83Wg4P3kgpe/IeyA1GZFTKVdrAB2d2+JjYVu7UEkAqE/ltJP7MWoUiL56OBQ43KKh0Wo0Dnqd4a5m8N2n+2Ft8="
+  - secure: "RHDM7FhywZ20otIBsothoRVde4ye73imi5QS9s2ZL6KntIxl37xhf28K1UEE4aMdewqTIq3896Et2Kvi3aJdbliGuZsDMV/R9b5XLmnGU80hfGc/ywYclu9ZxK7J5ET+qI2+nNcqI6EsX3j1jF1Pl6DyEjBwxC8tjLp0kIxcr5siU6T0tfwkRVSz3vo632gmpF0JlulTLzdYG3vGR0MizxGa97EZoVT7OxdDPIvsIpU028vodRQ8hHqhhX83ujhGiIS/HK6J0u14WrPojJ+jWynEyIjbpY3FTUmAPtjHhjOBcbyae7htSj4Kg9Faamh5ITwk/OGcXKvKD3uinPQC87WVXQSCvQxXxc3Ez5zGqjv4R0d1CZwXtteBYLMFfNRfhXd8MjKHoDNRQef6RaKuVqgi/Kg1sceQsXMXAu6oRAC1Xgty79oqUN81FNjbHWbvXo7f5B/Fc2kQ3iJcogvNQJvRbMGvDaEfJR8E3uTABNstMz6SqbjVJNb6h40D3nMh971pMblB5sryMRipACqfIe8MhZDkOi47yCh0Ymp3QRopN4Z7AIHCrxuRCuFehJoiq3kyxjo0nERgQHqcH9rRFLpG+XIyFXAT88cYEuVJ4UHWkkQebbJwdoIoyEhte0m/TyEKgrqsH3WBAeYySM/kQ3UMUjWS3lw0BTJf3Yv3bTE="
