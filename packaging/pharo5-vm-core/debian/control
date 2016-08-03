@@ -9,7 +9,6 @@ Build-Depends: debhelper (>= 7.0.50~), libssl-dev, libfreetype6-dev, libsm-dev, 
 Package: pharo5-vm-core
 Architecture: i386
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Recommends: pharo-vm-core
 Suggests: pharo-vm-desktop, pharo-launcher
 Multi-Arch: foreign
 Description: Clean and innovative Smalltalk-inspired environment.
